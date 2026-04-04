@@ -10,7 +10,7 @@
   #text(weight: "bold")[#t(job.position, lang), #job.company]
   #text(size: 10pt)[#date-range(job.start_date, job.end_date, lang)]
 
-  #render-bullets(job.description, lang)
+  #render-bullets(t(job.description, lang), lang)
   #v(0.5em)
 ]
 
@@ -20,7 +20,7 @@
 
   #let details = edu.at("details", default: none)
   #if details != none [
-    #render-bullets(details, lang)
+    #render-bullets(t(details, lang), lang)
   ]
 
   #v(0.5em)

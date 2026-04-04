@@ -1,7 +1,9 @@
 person:
   first_name: "Max"
   last_name: "Mustermann"
-  title: "Softwareentwickler"
+  title:
+    de: "Softwareentwickler"
+    en: "Software Engineer"
   date_of_birth: "1990-01-01"
   location:
     city: "Hamburg"
@@ -24,81 +26,122 @@ contact:
     country: "Deutschland"
 
 education:
-  - type: "study"          # study | apprenticeship | evening_school | training
+  - type: "study"          # study | apprenticeship | evening_school
     institution: "Universität Hamburg"
-    degree: "B.Sc. Informatik"
-    field: "Informatik"
+    degree: 
+      de: "B.Sc. Informatik"
+      en: "B.Sc. Computer Science"
+    field:
+      de: "Informatik"
+      en: "Computer Science"
     start_date: "2010-10"
     end_date: "2014-09"
     location: "Hamburg"
     details:
-      - "Schwerpunkt: Software Engineering"
-      - "Bachelorarbeit: Thema XYZ"
+      de:
+        - "Schwerpunkt: Software Engineering"
+        - "Bachelorarbeit: Thema XYZ"
+      en:
+        - "Focus: Software Engineering"
+        - "Bachelor thesis: Topic XYZ"
 
   - type: "apprenticeship"
     institution: "Firma XYZ GmbH"
-    degree: "Fachinformatiker Anwendungsentwicklung"
+    degree: 
+      de: "Fachinformatiker Anwendungsentwicklung"
+      en: "Apprenticeship as Application Developer"
     start_date: "2007-08"
     end_date: "2010-07"
     location: "Hamburg"
     details:
-      - "Duale Ausbildung mit Berufsschule"
+      de:
+        - "Duale Ausbildung mit Berufsschule"
+      en:
+        - "Dual education with vocational school"
 
   - type: "evening_school"
     institution: "Abendschule Hamburg"
-    degree: "Allgemeine Hochschulreife"
+    degree: 
+      de: "Allgemeine Hochschulreife"
+      en: "General University Entrance Qualification"
     start_date: "2005-08"
     end_date: "2007-07"
     location: "Hamburg"
 
 experience:
   - company: "Tech Solutions GmbH"
-    position: "Senior Software Engineer"
+    position: 
+      de: "Senior Software Engineer"
+      en: "Senior Software Engineer"
     start_date: "2020-01"
     end_date: null        # null = present
     location: "Hamburg"
     employment_type: "full-time"
     description:
-      - "Entwicklung von Webanwendungen mit Typst und Rust"
-      - "Teamleitung (5 Personen)"
+      de:
+        - "Entwicklung von Webanwendungen mit Typst und Rust"
+        - "Teamleitung (5 Personen)"
+      en:
+        - "Developing web applications with Typst and Rust"
+        - "Team leadership (5 people)"
     technologies:
       - "Rust"
       - "TypeScript"
       - "Docker"
 
   - company: "Startup ABC"
-    position: "Software Developer"
+    position: 
+      en: "Software Developer"
+      de: "Software Developer"
     start_date: "2016-06"
     end_date: "2019-12"
     location: "Berlin"
     employment_type: "full-time"
     description:
-      - "Backend-Entwicklung"
-      - "API Design"
+      en:
+        - "Backend-Development"
+        - "API Design"
+      de:
+        - "Backend-Entwicklung"
+        - "API Design"
 
 skills:
   categories:
-    - name: "Programmiersprachen"
+    - name:
+        de: "Programmiersprachen"
+        en: "Programming Languages"
       items:
         - name: "Rust"
         - name: "Python"
         - name: "JavaScript"
 
-    - name: "Frameworks"
+    - name:
+        de: "Frameworks"
+        en: "Frameworks"
       items:
         - name: "React"
         - name: "Django"
 
-    - name: "Tools"
+    - name:
+        de: "Tools"
+        en: "Tools"
       items:
         - name: "Docker"
         - name: "Git"
 
 languages:
-  - name: "Deutsch"
-    level: "Muttersprache"
-  - name: "Englisch"
-    level: "Fließend"
+  - name:
+      de: "Deutsch"
+      en: "German"
+    level:
+      de: "Muttersprache"
+      en: "Mother tongue"
+  - name:
+      de: "Englisch"
+      en: "English"
+    level:
+      de: "Fließend"
+      en: "Fluent"
 
 certifications:
   - name: "AWS Certified Developer"

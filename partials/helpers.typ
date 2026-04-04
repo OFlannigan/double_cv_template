@@ -1,6 +1,10 @@
 #let t(value, lang) = {
   if type(value) == dictionary {
-    value.at(lang, default: value.values().at(0))
+    if value.keys().contains(lang) {
+      value.at(lang)
+    } else {
+      value.at(value.keys().first())
+    }
   } else {
     value
   }
@@ -38,7 +42,7 @@
     let m = parts.at(1, default: "")
 
     if lang == "de" {
-      if m != "" { m + "." + y } else { y }
+      if m != "" { m + "/" + y } else { y }
     } else {
       let months = (
         "01": "Jan", "02": "Feb", "03": "Mar",

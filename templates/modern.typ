@@ -36,7 +36,7 @@
 
     #sidebar-block(label("skills", lang), [
       #for cat in data.skills.categories [
-        #text(weight: "bold")[#cat.name]
+        #text(weight: "bold")[#t(cat.name, lang)]
         #join-list(cat.items)
         #v(0.1em)
       ]
@@ -44,17 +44,17 @@
 
     #sidebar-block(label("certification", lang), [
       #for certificate in data.certifications [
-        #text(weight: "bold")[#certificate.name]\
-        #text[#certificate.issuer]
+        #text(weight: "bold")[#t(certificate.name, lang)]\
+        #text[#t(certificate.issuer, lang)]
         #text(size: 10pt)[#format-date(certificate.date, lang)]
         #v(0.1em)
       ]
     ])
 
     #sidebar-block(label("languages", lang), [
-      #for lang in data.languages [
-        #text(weight: "bold")[#lang.name]
-        #text[#lang.level]
+      #for language in data.languages [
+        #text(weight: "bold")[#t(language.name, lang)]
+        #text[#t(language.level, lang)]
         #v(0.1em)
       ]
     ])

@@ -4,7 +4,7 @@
 #let data = yaml("data/cv.yaml")
 
 #let template = sys.inputs.at("template", default: "modern")
-#let lang = sys.inputs.at("lang", default: "de")
+#let lang = sys.inputs.at("lang", default: "en")
 
 #if template == "modern" {
   render-modern(data, lang)
