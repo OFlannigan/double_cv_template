@@ -13,67 +13,71 @@
           rows: (1fr,),
           rect(width: 100%, height: 100%, fill: rgb("#239dad50"), stroke: none),
           rect(width: 100%, height: 100%, fill: rgb("#FF0000"), stroke: none),
-        )
-      )
+        ),
+      ),
     )
-    
+
     #let sidebar = [
       #box(clip: true, radius: 2.5cm, width: 5cm, height: 5cm, image(
         "../data/octo.png",
         height: 5cm,
       ))
 
-    #sidebar-block(label("contact", lang), [
-      #grid(columns: (1fr, 8fr), inset: (y: 2pt), align: (left + horizon, left + horizon),
-      [#email-icon], [#link("mailto:" + data.contact.email)],
-      [#phone-icon],[#link("tel:" + data.contact.phone)],
-      [#linkedin-icon], [#link(data.contact.linkedin.url)[#data.contact.linkedin.display_text]],
-      [#github-icon], [#link(data.contact.github.url)[#data.contact.github.display_text]],
-      [#address-icon], [#data.contact.address.street],
-      [], [#data.contact.address.postal_code #data.contact.address.city],
-      [], [#data.contact.address.country])
-    ])
+      #sidebar-block(label("contact", lang), [
+        #grid(
+          columns: (1fr, 8fr),
+          inset: (y: 2pt),
+          align: (left + horizon, left + horizon),
+          [#email-icon], [#link("mailto:" + data.contact.email)],
+          [#phone-icon], [#link("tel:" + data.contact.phone)],
+          [#linkedin-icon], [#link(data.contact.linkedin.url)[#data.contact.linkedin.display_text]],
+          [#github-icon], [#link(data.contact.github.url)[#data.contact.github.display_text]],
+          [#address-icon], [#data.contact.address.street],
+          [], [#data.contact.address.postal_code #data.contact.address.city],
+          [], [#data.contact.address.country],
+        )
+      ])
 
-    #sidebar-block(label("skills", lang), [
-      #for cat in data.skills.categories [
-        #text(weight: "bold")[#t(cat.name, lang)]
-        #join-list(cat.items)
-        #v(0.1em)
-      ]
-    ])
+      #sidebar-block(label("skills", lang), [
+        #for cat in data.skills.categories [
+          #text(weight: "bold")[#t(cat.name, lang)]
+          #join-list(cat.items)
+          #v(0.1em)
+        ]
+      ])
 
-    #sidebar-block(label("certification", lang), [
-      #for certificate in data.certifications [
-        #text(weight: "bold")[#t(certificate.name, lang)]\
-        #text[#t(certificate.issuer, lang)]
-        #text(size: 10pt)[#format-date(certificate.date, lang)]
-        #v(0.1em)
-      ]
-    ])
+      #sidebar-block(label("certification", lang), [
+        #for certificate in data.certifications [
+          #text(weight: "bold")[#t(certificate.name, lang)]\
+          #text[#t(certificate.issuer, lang)]
+          #text(size: 10pt)[#format-date(certificate.date, lang)]
+          #v(0.1em)
+        ]
+      ])
 
-    #sidebar-block(label("languages", lang), [
-      #for language in data.languages [
-        #text(weight: "bold")[#t(language.name, lang)]
-        #text[#t(language.level, lang)]
-        #v(0.1em)
-      ]
-    ])
-  ]
-
-  #let main = [
-    #header(data.person.first_name + " " + data.person.last_name, t(data.person.title, lang))
-
-    #main-section(label("experience", lang))
-    #for job in sort-by-date(data.experience) [
-      #experience-item(job, lang)
+      #sidebar-block(label("languages", lang), [
+        #for language in data.languages [
+          #text(weight: "bold")[#t(language.name, lang)]
+          #text[#t(language.level, lang)]
+          #v(0.1em)
+        ]
+      ])
     ]
 
-    #main-section(label("education", lang))
-    #for edu in data.education [
-      #education-item(edu, lang)
-    ]
-  ]
+    #let main = [
+      #header(data.person.first_name + " " + data.person.last_name, t(data.person.title, lang))
 
-  #two-column(sidebar, main)
+      #main-section(label("experience", lang))
+      #for job in sort-by-date(data.experience) [
+        #experience-item(job, lang)
+      ]
+
+      #main-section(label("education", lang))
+      #for edu in data.education [
+        #education-item(edu, lang)
+      ]
+    ]
+
+    #two-column(sidebar, main)
   ])
 }

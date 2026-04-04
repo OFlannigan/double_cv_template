@@ -28,7 +28,7 @@
     contact: "Contact",
     present: "Present",
     certification: "Certifications",
-  )
+  ),
 )
 
 #let label(key, lang) = labels.at(lang).at(key)
@@ -45,10 +45,18 @@
       if m != "" { m + "/" + y } else { y }
     } else {
       let months = (
-        "01": "Jan", "02": "Feb", "03": "Mar",
-        "04": "Apr", "05": "May", "06": "Jun",
-        "07": "Jul", "08": "Aug", "09": "Sep",
-        "10": "Oct", "11": "Nov", "12": "Dec",
+        "01": "Jan",
+        "02": "Feb",
+        "03": "Mar",
+        "04": "Apr",
+        "05": "May",
+        "06": "Jun",
+        "07": "Jul",
+        "08": "Aug",
+        "09": "Sep",
+        "10": "Oct",
+        "11": "Nov",
+        "12": "Dec",
       )
       if m != "" { months.at(m) + " " + y } else { y }
     }
@@ -57,7 +65,9 @@
 
 #let date-range(start, end, lang) = format-date(start, lang) + " – " + format-date(end, lang)
 
-#let join-list(list, sep: ", ") = list.map(x => if type(x) == dictionary { x.at("name", default: x) } else { x }).join(sep)
+#let join-list(list, sep: ", ") = (
+  list.map(x => if type(x) == dictionary { x.at("name", default: x) } else { x }).join(sep)
+)
 
 #let render-bullets(items, lang) = {
   for i in items {
@@ -65,4 +75,4 @@
   }
 }
 
-#let sort-by-date(list) = list.sorted(key: (x) => x.start_date).rev()
+#let sort-by-date(list) = list.sorted(key: x => x.start_date).rev()

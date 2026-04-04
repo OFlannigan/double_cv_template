@@ -7,7 +7,7 @@
 #let setup-page(content) = {
   set page(
     margin: 1cm,
-    paper: "a4"
+    paper: "a4",
   )
 
   set text(
@@ -41,7 +41,6 @@
   grid(
     columns: (1fr, 2fr),
     gutter: 1cm,
-    left,
-    right,
+    left, right,
   )
 }
