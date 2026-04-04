@@ -26,8 +26,7 @@ contact:
     country: "Deutschland"
 
 education:
-  - type: "study"          # study | apprenticeship | evening_school
-    institution: "Universität Hamburg"
+  - institution: "Universität Hamburg"
     degree: 
       de: "B.Sc. Informatik"
       en: "B.Sc. Computer Science"
@@ -45,8 +44,7 @@ education:
         - "Focus: Software Engineering"
         - "Bachelor thesis: Topic XYZ"
 
-  - type: "apprenticeship"
-    institution: "Firma XYZ GmbH"
+  - institution: "Firma XYZ GmbH"
     degree: 
       de: "Fachinformatiker Anwendungsentwicklung"
       en: "Apprenticeship as Application Developer"
@@ -59,8 +57,7 @@ education:
       en:
         - "Dual education with vocational school"
 
-  - type: "evening_school"
-    institution: "Abendschule Hamburg"
+  - institution: "Abendschule Hamburg"
     degree: 
       de: "Allgemeine Hochschulreife"
       en: "General University Entrance Qualification"
