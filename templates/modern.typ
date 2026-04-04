@@ -16,12 +16,12 @@
         )
       )
     )
-  #let sidebar = [
-    #block(width: 100%)[
-      #align(left)[
-        #image("../data/octo.png", width: 90%)
-      ]
-    ]
+    
+    #let sidebar = [
+      #box(clip: true, radius: 2.5cm, width: 5cm, height: 5cm, image(
+        "../data/octo.png",
+        height: 5cm,
+      ))
 
     #sidebar-block(label("contact", lang), [
       #grid(columns: (1fr, 8fr), inset: (y: 2pt), align: (left + horizon, left + horizon),
