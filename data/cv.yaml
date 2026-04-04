@@ -1,0 +1,106 @@
+person:
+  first_name: "Max"
+  last_name: "Mustermann"
+  title: "Softwareentwickler"
+  date_of_birth: "1990-01-01"
+  location:
+    city: "Hamburg"
+    country: "Deutschland"
+
+contact:
+  phone: "+49 123 456789"
+  email: "max@example.com"
+  website: "https://maxmustermann.de"
+  linkedin: 
+    url: "https://linkedin.com/in/maxmustermann"
+    display_text: "Max Mustermann"
+  github:
+    url: "https://github.com/maxmustermann"
+    display_text: "maxmustermann"
+  address:
+    street: "Musterstraße 1"
+    city: "Hamburg"
+    postal_code: "12345"
+    country: "Deutschland"
+
+education:
+  - type: "study"          # study | apprenticeship | evening_school | training
+    institution: "Universität Hamburg"
+    degree: "B.Sc. Informatik"
+    field: "Informatik"
+    start_date: "2010-10"
+    end_date: "2014-09"
+    location: "Hamburg"
+    details:
+      - "Schwerpunkt: Software Engineering"
+      - "Bachelorarbeit: Thema XYZ"
+
+  - type: "apprenticeship"
+    institution: "Firma XYZ GmbH"
+    degree: "Fachinformatiker Anwendungsentwicklung"
+    start_date: "2007-08"
+    end_date: "2010-07"
+    location: "Hamburg"
+    details:
+      - "Duale Ausbildung mit Berufsschule"
+
+  - type: "evening_school"
+    institution: "Abendschule Hamburg"
+    degree: "Allgemeine Hochschulreife"
+    start_date: "2005-08"
+    end_date: "2007-07"
+    location: "Hamburg"
+
+experience:
+  - company: "Tech Solutions GmbH"
+    position: "Senior Software Engineer"
+    start_date: "2020-01"
+    end_date: null        # null = present
+    location: "Hamburg"
+    employment_type: "full-time"
+    description:
+      - "Entwicklung von Webanwendungen mit Typst und Rust"
+      - "Teamleitung (5 Personen)"
+    technologies:
+      - "Rust"
+      - "TypeScript"
+      - "Docker"
+
+  - company: "Startup ABC"
+    position: "Software Developer"
+    start_date: "2016-06"
+    end_date: "2019-12"
+    location: "Berlin"
+    employment_type: "full-time"
+    description:
+      - "Backend-Entwicklung"
+      - "API Design"
+
+skills:
+  categories:
+    - name: "Programmiersprachen"
+      items:
+        - name: "Rust"
+        - name: "Python"
+        - name: "JavaScript"
+
+    - name: "Frameworks"
+      items:
+        - name: "React"
+        - name: "Django"
+
+    - name: "Tools"
+      items:
+        - name: "Docker"
+        - name: "Git"
+
+languages:
+  - name: "Deutsch"
+    level: "Muttersprache"
+  - name: "Englisch"
+    level: "Fließend"
+
+certifications:
+  - name: "AWS Certified Developer"
+    issuer: "Amazon"
+    date: "2021-05"
