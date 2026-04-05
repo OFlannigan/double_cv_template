@@ -57,8 +57,7 @@
           #for certificate in data.certifications [
             #block(breakable: false)[
               #text(weight: "bold")[#translate(certificate.name, language)]\
-              #text[#translate(certificate.issuer, language)]
-              #text(size: 10pt)[#format-date(certificate.date, language)]
+              #text[#translate(certificate.issuer, language) - #format-date(certificate.date, language)]
               #v(0.1em)
             ]
           ]

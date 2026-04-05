@@ -7,9 +7,14 @@
     #align(center)[
       #header(data.person.first_name + " " + data.person.last_name, translate(data.person.title, language))
 
-      #data.contact.address.street, #data.contact.address.postal_code #data.contact.address.city, #data.contact.address.country
+      #block(breakable: false)[
+        #data.contact.address.street,
+        #data.contact.address.postal_code #data.contact.address.city,
+        #data.contact.address.country
+      ]
 
-      #link("mailto:" + data.contact.email) | #link("tel:" + data.contact.phone) | #link(data.contact.linkedin.url)[#remove-protocol(data.contact.linkedin.url)] | #link(data.contact.github.url)[#remove-protocol(data.contact.github.url)]
+      #block(breakable: false)[
+      #link("mailto:" + data.contact.email) | #link("tel:" + data.contact.phone) | #link(data.contact.linkedin.url)[#remove-protocol(data.contact.linkedin.url)] | #link(data.contact.github.url)[#remove-protocol(data.contact.github.url)]]
     ]
     #block(breakable: false)[
       #main-section(label("experience", language))
@@ -41,6 +46,7 @@
           #v(0.1em)
         ]
       ]
+      #v(0.5em)
     ]
 
     #block(breakable: false)[
@@ -52,6 +58,7 @@
           #v(0.1em)
         ]
       ]
+      #v(0.5em)
     ]
 
     #block(breakable: false)[
@@ -63,6 +70,7 @@
           #v(0.1em)
         ]
       ]
+      #v(0.5em)
     ]
   ])
 }

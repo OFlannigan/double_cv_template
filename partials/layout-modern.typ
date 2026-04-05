@@ -28,13 +28,14 @@
 
 #let sidebar-block(title, content) = [
   #text(weight: "bold", size: 12pt)[#title]
-  #v(0.1em)
+  #line(length: 90%)
   #content
-  #v(1em)
+  #v(0.5em)
 ]
 
 #let main-section(title) = [
   #text(weight: "bold", size: 12pt)[#title]
+  #line(length: 90%)
   #v(0.5em)
 ]
 

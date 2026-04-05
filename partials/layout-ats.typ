@@ -7,6 +7,7 @@
   set page(
     margin: 1cm,
     paper: "a4",
+    numbering: "1 / 1"
   )
 
   set text(
