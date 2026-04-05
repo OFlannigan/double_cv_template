@@ -1,6 +1,6 @@
 #import "../partials/helpers.typ": *
-#import "../partials/components.typ": *
-#import "../partials/layout.typ": *
+#import "../partials/components-modern.typ": *
+#import "../partials/layout-modern.typ": *
 #import "../lib.typ": *
 
 #let render(data, language) = {
@@ -39,9 +39,9 @@
       ])
 
       #sidebar-block(label("skills", language), [
-        #for cat in data.skills.categories [
-          #text(weight: "bold")[#translate(cat.name, language)]
-          #join-list(cat.items)
+        #for category in data.skills.categories [
+          #text(weight: "bold")[#translate(category.name, language)]
+          #join-list(category.items)
           #v(0.1em)
         ]
       ])
