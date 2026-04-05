@@ -4,14 +4,14 @@
   muted: rgb("#555555"),
 )
 
-#let setup-page(content) = {
+#let setup-page(content, font: "Helvetica Neue") = {
   set page(
     margin: 1cm,
     paper: "a4",
   )
 
   set text(
-    font: "Helvetica Neue",
+    font: font,
     size: 10pt,
     fill: theme.text,
   )

@@ -3,7 +3,7 @@
 #import "../partials/layout.typ": *
 
 #let render(data, language) = {
-  setup-page([
+  setup-page(font: "Libertinus Serif", [
     #header(data.person.first_name + " " + data.person.last_name, translate(data.person.title, language))
 
     #data.contact.phone | #data.contact.email
