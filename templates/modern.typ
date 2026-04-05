@@ -1,5 +1,5 @@
 #import "../partials/helpers.typ": *
-#import "../partials/components-modern.typ": *
+#import "../partials/components.typ": *
 #import "../partials/layout-modern.typ": *
 #import "../lib.typ": *
 
@@ -68,8 +68,15 @@
       #header(data.person.first_name + " " + data.person.last_name, translate(data.person.title, language))
 
       #main-section(label("experience", language))
-      #for job in sort-by-date(data.experience) [
-        #experience-item(job, language)
+      #for company in data.experience [
+        #let sorted_positions = company.positions.sorted(key: (p) => p.start_date).rev()
+        #for (index, position) in sorted_positions.enumerate() [
+          #if index == 0 [
+            #company-position-first(position, company.company, company.location, language)
+          ] else [
+            #company-position-rest(position, language)
+          ]
+        ]
       ]
 
       #main-section(label("education", language))

@@ -70,40 +70,49 @@ education:
 
 experience:
   - company: "Tech Solutions GmbH"
-    position: 
-      de: "Senior Software Engineer"
-      en: "Senior Software Engineer"
-    start_date: "2020-01"
-    end_date: null        # null = present
     location: "Hamburg"
-    employment_type: "full-time"
-    description:
-      de:
-        - "Entwicklung von Webanwendungen mit Typst und Rust"
-        - "Teamleitung (5 Personen)"
-      en:
-        - "Developing web applications with Typst and Rust"
-        - "Team leadership (5 people)"
-    technologies:
-      - "Rust"
-      - "TypeScript"
-      - "Docker"
+    positions:
+      - position:
+          en: "Senior Software Engineer"
+          de: "Senior Software Engineer"
+        start_date: "2020-01"
+        end_date: null        # null = present
+        description:
+          en:
+            - "Developing web applications with Typst and Rust"
+            - "Team leadership (5 people)"
+          de:
+            - "Entwicklung von Webanwendungen mit Typst und Rust"
+            - "Teamleitung (5 Personen)"
 
   - company: "Startup ABC"
-    position: 
-      en: "Software Developer"
-      de: "Software Developer"
-    start_date: "2016-06"
-    end_date: "2019-12"
     location: "Berlin"
-    employment_type: "full-time"
-    description:
-      en:
-        - "Backend-Development"
-        - "API Design"
-      de:
-        - "Backend-Entwicklung"
-        - "API Design"
+    positions:
+      - position:
+          en: "Senior Developer"
+          de: "Senior Developer"
+        start_date: "2016-06"
+        end_date: "2019-12"
+        description:
+          en:
+            - "Backend-Development"
+            - "API Design"
+          de:
+            - "Backend-Entwicklung"
+            - "API Design"
+
+      - position:
+          en: "Software Developer"
+          de: "Software Developer"
+        start_date: "2014-10"
+        end_date: "2016-05"
+        description:
+          en:
+            - "Full-stack development"
+            - "Database optimization"
+          de:
+            - "Full-Stack-Entwicklung"
+            - "Datenbankoptimierung"
 
 skills:
   categories:
