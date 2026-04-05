@@ -14,7 +14,7 @@
     ]
 
     #main-section(label("education", language))
-    #for education in data.education [
+    #for education in sort-by-date(data.education) [
       #education-item(education, language)
     ]
 
