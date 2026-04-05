@@ -33,6 +33,15 @@
     [#text(weight: "bold")[#education.institution]], [#align(right)[#text(weight: "bold")[#education.location]]],
     [#translate(education.degree, language)], [#align(right)[#date-range(education.start_date, education.end_date, language)]],
   )
+  #v(-0.8em)
+  #let grade = education.at("grade", default: none)
+  #if grade != none [
+    #if education.end_date != none [
+      #text[#label("final_grade", language): #education.grade]
+    ] else [
+      #text[#label("current_grade", language): #education.grade]
+    ]
+  ]
 
   #let details = education.at("details", default: none)
   #if details != none [
