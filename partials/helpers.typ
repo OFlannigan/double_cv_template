@@ -1,7 +1,7 @@
-#let t(value, lang) = {
+#let translate(value, language) = {
   if type(value) == dictionary {
-    if value.keys().contains(lang) {
-      value.at(lang)
+    if value.keys().contains(language) {
+      value.at(language)
     } else {
       value.at(value.keys().first())
     }
@@ -31,18 +31,18 @@
   ),
 )
 
-#let label(key, lang) = labels.at(lang).at(key)
+#let label(key, language) = labels.at(language).at(key)
 
-#let format-date(date, lang) = {
+#let format-date(date, language) = {
   if date == none {
-    label("present", lang)
+    label("present", language)
   } else {
     let parts = date.split("-")
-    let y = parts.at(0)
-    let m = parts.at(1, default: "")
+    let year = parts.at(0)
+    let month = parts.at(1, default: "")
 
-    if lang == "de" {
-      if m != "" { m + "/" + y } else { y }
+    if language == "de" {
+      if month != "" { month + "/" + year } else { year }
     } else {
       let months = (
         "01": "Jan",
@@ -58,20 +58,20 @@
         "11": "Nov",
         "12": "Dec",
       )
-      if m != "" { months.at(m) + " " + y } else { y }
+      if month != "" { months.at(month) + " " + year } else { year }
     }
   }
 }
 
-#let date-range(start, end, lang) = format-date(start, lang) + " – " + format-date(end, lang)
+#let date-range(start, end, language) = format-date(start, language) + " – " + format-date(end, language)
 
-#let join-list(list, sep: ", ") = (
-  list.map(x => if type(x) == dictionary { x.at("name", default: x) } else { x }).join(sep)
+#let join-list(list, separator: ", ") = (
+  list.map(x => if type(x) == dictionary { x.at("name", default: x) } else { x }).join(separator)
 )
 
-#let render-bullets(items, lang) = {
-  for i in items {
-    [- #t(i, lang)]
+#let render-bullets(items, language) = {
+  for item in items {
+    [- #translate(item, language)]
   }
 }
 

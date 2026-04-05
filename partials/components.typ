@@ -1,26 +1,26 @@
 #import "helpers.typ": *
 
-#let section(title, lang) = [
+#let section(title, language) = [
   #v(1em)
-  #text(weight: "bold", size: 12pt)[#label(title, lang)]
+  #text(weight: "bold", size: 12pt)[#label(title, language)]
   #line(length: 100%)
 ]
 
-#let experience-item(job, lang) = [
-  #text(weight: "bold")[#t(job.position, lang), #job.company]
-  #text(size: 10pt)[#date-range(job.start_date, job.end_date, lang)]
+#let experience-item(job, language) = [
+  #text(weight: "bold")[#translate(job.position, language), #job.company]
+  #text(size: 10pt)[#date-range(job.start_date, job.end_date, language)]
 
-  #render-bullets(t(job.description, lang), lang)
+  #render-bullets(translate(job.description, language), language)
   #v(0.5em)
 ]
 
-#let education-item(edu, lang) = [
-  #text(weight: "bold")[#t(edu.degree, lang), #edu.institution]
-  #text(size: 10pt)[#date-range(edu.start_date, edu.end_date, lang)]
+#let education-item(education, language) = [
+  #text(weight: "bold")[#translate(education.degree, language), #education.institution]
+  #text(size: 10pt)[#date-range(education.start_date, education.end_date, language)]
 
-  #let details = edu.at("details", default: none)
+  #let details = education.at("details", default: none)
   #if details != none [
-    #render-bullets(t(details, lang), lang)
+    #render-bullets(translate(details, language), language)
   ]
 
   #v(0.5em)

@@ -4,10 +4,10 @@
 #let data = yaml("data/cv.yaml")
 
 #let template = sys.inputs.at("template", default: "modern")
-#let lang = sys.inputs.at("lang", default: "en")
+#let language = sys.inputs.at("lang", default: "en")
 
 #if template == "modern" {
-  render-modern(data, lang)
+  render-modern(data, language)
 } else if template == "ats" {
-  render-ats(data, lang)
+  render-ats(data, language)
 }

@@ -3,7 +3,7 @@
 #import "../partials/layout.typ": *
 #import "../lib.typ": *
 
-#let render(data, lang) = {
+#let render(data, language) = {
   setup-page([
     #set page(
       background: place(
@@ -23,7 +23,7 @@
         height: 5cm,
       ))
 
-      #sidebar-block(label("contact", lang), [
+      #sidebar-block(label("contact", language), [
         #grid(
           columns: (1fr, 8fr),
           inset: (y: 2pt),
@@ -38,43 +38,43 @@
         )
       ])
 
-      #sidebar-block(label("skills", lang), [
+      #sidebar-block(label("skills", language), [
         #for cat in data.skills.categories [
-          #text(weight: "bold")[#t(cat.name, lang)]
+          #text(weight: "bold")[#translate(cat.name, language)]
           #join-list(cat.items)
           #v(0.1em)
         ]
       ])
 
-      #sidebar-block(label("certification", lang), [
+      #sidebar-block(label("certification", language), [
         #for certificate in data.certifications [
-          #text(weight: "bold")[#t(certificate.name, lang)]\
-          #text[#t(certificate.issuer, lang)]
-          #text(size: 10pt)[#format-date(certificate.date, lang)]
+          #text(weight: "bold")[#translate(certificate.name, language)]\
+          #text[#translate(certificate.issuer, language)]
+          #text(size: 10pt)[#format-date(certificate.date, language)]
           #v(0.1em)
         ]
       ])
 
-      #sidebar-block(label("languages", lang), [
+      #sidebar-block(label("languages", language), [
         #for language in data.languages [
-          #text(weight: "bold")[#t(language.name, lang)]
-          #text[#t(language.level, lang)]
+          #text(weight: "bold")[#translate(language.name, language)]
+          #text[#translate(language.level, language)]
           #v(0.1em)
         ]
       ])
     ]
 
     #let main = [
-      #header(data.person.first_name + " " + data.person.last_name, t(data.person.title, lang))
+      #header(data.person.first_name + " " + data.person.last_name, translate(data.person.title, language))
 
-      #main-section(label("experience", lang))
+      #main-section(label("experience", language))
       #for job in sort-by-date(data.experience) [
-        #experience-item(job, lang)
+        #experience-item(job, language)
       ]
 
-      #main-section(label("education", lang))
-      #for edu in data.education [
-        #education-item(edu, lang)
+      #main-section(label("education", language))
+      #for education in data.education [
+        #education-item(education, language)
       ]
     ]
 

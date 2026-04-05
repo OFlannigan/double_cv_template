@@ -2,26 +2,26 @@
 #import "../partials/components.typ": *
 #import "../partials/layout.typ": *
 
-#let render(data, lang) = {
+#let render(data, language) = {
   setup-page([
-    #header(data.person.first_name + " " + data.person.last_name, t(data.person.title, lang))
+    #header(data.person.first_name + " " + data.person.last_name, translate(data.person.title, language))
 
     #data.contact.phone | #data.contact.email
 
-    #main-section(label("experience", lang))
+    #main-section(label("experience", language))
     #for job in sort-by-date(data.experience) [
-      #experience-item(job, lang)
+      #experience-item(job, language)
     ]
 
-    #main-section(label("education", lang))
-    #for edu in data.education [
-      #education-item(edu, lang)
+    #main-section(label("education", language))
+    #for education in data.education [
+      #education-item(education, language)
     ]
 
-    #main-section(label("skills", lang))
-    #for cat in data.skills.categories [
-      #text(weight: "bold")[#cat.name:]
-      #join-list(cat.items)
+    #main-section(label("skills", language))
+    #for category in data.skills.categories [
+      #text(weight: "bold")[#category.name:]
+      #join-list(category.items)
       #v(0.5em)
     ]
   ])
