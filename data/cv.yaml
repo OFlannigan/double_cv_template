@@ -5,9 +5,6 @@ person:
     de: "Softwareentwickler"
     en: "Software Engineer"
   date_of_birth: "1990-01-01"
-  location:
-    city: "Hamburg"
-    country: "Deutschland"
 
 contact:
   phone: "+49 123 456789"
@@ -77,33 +74,33 @@ experience:
     location: "Hamburg"
     positions:
       - position:
-          en: "Senior Software Engineer"
           de: "Senior Software Engineer"
+          en: "Senior Software Engineer" 
         start_date: "2020-01"
         end_date: null        # null = present
         description:
-          en:
-            - "Developing web applications with Typst and Rust"
-            - "Team leadership (5 people)"
           de:
             - "Entwicklung von Webanwendungen mit Typst und Rust"
             - "Teamleitung (5 Personen)"
+          en:
+            - "Developing web applications with Typst and Rust"
+            - "Team leadership (5 people)"
 
   - company: "Startup ABC"
     website: "https://www.startup-abc.com"
     location: "Berlin"
     positions:
       - position:
-          en: "Senior Developer"
           de: "Senior Developer"
+          en: "Senior Developer"
         start_date: "2016-06"
         end_date: "2019-12"
         description:
-          en:
-            - "Backend-Development"
-            - "API Design"
           de:
             - "Backend-Entwicklung"
+            - "API Design"
+          en:
+            - "Backend-Development"
             - "API Design"
 
       - position:
@@ -112,12 +109,12 @@ experience:
         start_date: "2014-10"
         end_date: "2016-05"
         description:
-          en:
-            - "Full-stack development"
-            - "Database optimization"
           de:
             - "Full-Stack-Entwicklung"
             - "Datenbankoptimierung"
+          en:
+            - "Full-stack development"
+            - "Database optimization"
 
 skills:
   categories:
