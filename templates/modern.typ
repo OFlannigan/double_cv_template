@@ -19,7 +19,7 @@
 
     #let sidebar = [
       #box(clip: true, radius: 2.5cm, width: 5cm, height: 5cm, image(
-        "../data/octo.png",
+        "../data/profile.png",
         height: 5cm,
       ))
 
