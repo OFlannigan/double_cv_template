@@ -19,6 +19,8 @@
     contact: "Kontakt",
     present: "Heute",
     certification: "Zertifizierungen",
+    final_grade: "Abschlussnote",
+    current_grade: "Aktuelle Note",
   ),
   en: (
     experience: "Work Experience",
@@ -28,6 +30,8 @@
     contact: "Contact",
     present: "Present",
     certification: "Certifications",
+    final_grade: "Final Grade",
+    current_grade: "Current Grade",
   ),
 )
 
