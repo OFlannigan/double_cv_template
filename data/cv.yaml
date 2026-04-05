@@ -27,6 +27,7 @@ contact:
 
 education:
   - institution: "Universität Hamburg"
+    website: "https://www.uni-hamburg.de"
     degree: 
       de: "B.Sc. Informatik"
       en: "B.Sc. Computer Science"
@@ -46,6 +47,7 @@ education:
         - "Bachelor thesis: Topic XYZ"
 
   - institution: "Firma XYZ GmbH"
+    website: "https://www.firma-xzy.de"
     degree: 
       de: "Fachinformatiker Anwendungsentwicklung"
       en: "Apprenticeship as Application Developer"
@@ -60,6 +62,7 @@ education:
         - "Dual education with vocational school"
 
   - institution: "Abendschule Hamburg"
+    website: "https://www.abendschule-hamburg.de"
     degree: 
       de: "Allgemeine Hochschulreife"
       en: "General University Entrance Qualification"
@@ -70,6 +73,7 @@ education:
 
 experience:
   - company: "Tech Solutions GmbH"
+    website: "https://www.techsolutions.de"
     location: "Hamburg"
     positions:
       - position:
@@ -86,6 +90,7 @@ experience:
             - "Teamleitung (5 Personen)"
 
   - company: "Startup ABC"
+    website: "https://www.startup-abc.com"
     location: "Berlin"
     positions:
       - position:

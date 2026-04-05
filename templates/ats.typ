@@ -22,7 +22,7 @@
         #let sorted_positions = company.positions.sorted(key: p => p.start_date).rev()
         #for (index, position) in sorted_positions.enumerate() [
           #if index == 0 [
-            #company-position-first(position, company.company, company.location, language)
+            #company-position-first(position, company, language)
           ] else [
             #company-position-rest(position, language)
           ]

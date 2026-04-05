@@ -1,12 +1,18 @@
 #import "helpers.typ": *
 
-#let company-position-first(position, company, location, language) = {
+#let company-position-first(position, company, language) = {
   block(breakable: false)[
     #grid(
       columns: (1fr, auto),
       gutter: 0pt,
       inset: (y: 3pt),
-      [#text(weight: "bold")[#company]], [#align(right)[#text(weight: "bold")[#location]]],
+      [#text(weight: "bold")[
+        #if company.at("website", default: none) != none [
+          #link(company.website)[#company.company]
+        ] else [
+          #company.company
+        ]
+      ]], [#align(right)[#text(weight: "bold")[#company.location]]],
       [#translate(position.position, language)],
       [#align(right)[#date-range(position.start_date, position.end_date, language)]],
     )
@@ -37,7 +43,13 @@
       columns: (1fr, auto),
       gutter: 0pt,
       inset: (y: 3pt),
-      [#text(weight: "bold")[#education.institution]], [#align(right)[#text(weight: "bold")[#education.location]]],
+      [#text(weight: "bold")[
+        #if education.at("website", default: none) != none [
+          #link(education.website)[#education.institution]
+        ] else [
+          #education.institution
+        ]
+      ]], [#align(right)[#text(weight: "bold")[#education.location]]],
       [#translate(education.degree, language)],
       [#align(right)[#date-range(education.start_date, education.end_date, language)]],
     )
