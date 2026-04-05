@@ -24,42 +24,56 @@
       ))
 
       #sidebar-block(label("contact", language), [
-        #grid(
-          columns: (1fr, 8fr),
-          inset: (y: 2pt),
-          align: (left + horizon, left + horizon),
-          [#email-icon], [#link("mailto:" + data.contact.email)],
-          [#phone-icon], [#link("tel:" + data.contact.phone)],
-          [#linkedin-icon], [#link(data.contact.linkedin.url)[#data.contact.linkedin.display_text]],
-          [#github-icon], [#link(data.contact.github.url)[#data.contact.github.display_text]],
-          [#address-icon], [#data.contact.address.street],
-          [], [#data.contact.address.postal_code #data.contact.address.city],
-          [], [#data.contact.address.country],
-        )
+        #block(breakable: false)[
+          #grid(
+            columns: (1fr, 8fr),
+            inset: (y: 2pt),
+            align: (left + horizon, left + horizon),
+            [#email-icon], [#link("mailto:" + data.contact.email)],
+            [#phone-icon], [#link("tel:" + data.contact.phone)],
+            [#linkedin-icon], [#link(data.contact.linkedin.url)[#data.contact.linkedin.display_text]],
+            [#github-icon], [#link(data.contact.github.url)[#data.contact.github.display_text]],
+            [#address-icon], [#data.contact.address.street],
+            [], [#data.contact.address.postal_code #data.contact.address.city],
+            [], [#data.contact.address.country],
+          )
+        ]
       ])
 
       #sidebar-block(label("skills", language), [
-        #for category in data.skills.categories [
-          #text(weight: "bold")[#translate(category.name, language)]
-          #join-list(category.items)
-          #v(0.1em)
+        #block(breakable: false)[
+          #for category in data.skills.categories [
+            #block(breakable: false)[
+              #text(weight: "bold")[#translate(category.name, language)]
+              #join-list(category.items)
+              #v(0.1em)
+            ]
+          ]
         ]
       ])
 
       #sidebar-block(label("certification", language), [
-        #for certificate in data.certifications [
-          #text(weight: "bold")[#translate(certificate.name, language)]\
-          #text[#translate(certificate.issuer, language)]
-          #text(size: 10pt)[#format-date(certificate.date, language)]
-          #v(0.1em)
+        #block(breakable: false)[
+          #for certificate in data.certifications [
+            #block(breakable: false)[
+              #text(weight: "bold")[#translate(certificate.name, language)]\
+              #text[#translate(certificate.issuer, language)]
+              #text(size: 10pt)[#format-date(certificate.date, language)]
+              #v(0.1em)
+            ]
+          ]
         ]
       ])
 
       #sidebar-block(label("languages", language), [
-        #for lang in data.languages [
-          #text(weight: "bold")[#translate(lang.name, language)]
-          #text[#translate(lang.level, language)]
-          #v(0.1em)
+        #block(breakable: false)[
+          #for lang in data.languages [
+            #block(breakable: false)[
+              #text(weight: "bold")[#translate(lang.name, language)]
+              #text[#translate(lang.level, language)]
+              #v(0.1em)
+            ]
+          ]
         ]
       ])
     ]
@@ -67,21 +81,25 @@
     #let main = [
       #header(data.person.first_name + " " + data.person.last_name, translate(data.person.title, language))
 
-      #main-section(label("experience", language))
-      #for company in data.experience [
-        #let sorted_positions = company.positions.sorted(key: (p) => p.start_date).rev()
-        #for (index, position) in sorted_positions.enumerate() [
-          #if index == 0 [
-            #company-position-first(position, company.company, company.location, language)
-          ] else [
-            #company-position-rest(position, language)
+      #block(breakable: false)[
+        #main-section(label("experience", language))
+        #for company in data.experience [
+          #let sorted_positions = company.positions.sorted(key: p => p.start_date).rev()
+          #for (index, position) in sorted_positions.enumerate() [
+            #if index == 0 [
+              #company-position-first(position, company.company, company.location, language)
+            ] else [
+              #company-position-rest(position, language)
+            ]
           ]
         ]
       ]
 
-      #main-section(label("education", language))
-      #for education in sort-by-date(data.education) [
-        #education-item(education, language)
+      #block(breakable: false)[
+        #main-section(label("education", language))
+        #for education in sort-by-date(data.education) [
+          #education-item(education, language)
+        ]
       ]
     ]
 
