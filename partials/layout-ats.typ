@@ -1,17 +1,16 @@
 #let theme = (
   primary: rgb("#2E86C1"),
   text: rgb("#000000"),
-  muted: rgb("#555555"),
 )
 
-#let setup-page(content, font: "Libertinus Serif") = {
+#let setup-page(content) = {
   set page(
     margin: 1cm,
     paper: "a4",
   )
 
   set text(
-    font: font,
+    font: "Libertinus Serif",
     size: 10pt,
     fill: theme.text,
   )
@@ -20,9 +19,9 @@
 }
 
 #let header(name, title) = [
-  #text(size: 18pt, weight: "bold")[#name] \
-  #text(size: 11pt, fill: theme.muted)[#title]
-  #v(1em)
+  #text(size: 24pt, weight: "bold")[#name] \
+  #text(size: 12pt, weight: "bold")[#title]
+
 ]
 
 #let main-section(title) = [

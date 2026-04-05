@@ -69,6 +69,16 @@
 
 #let date-range(start, end, language) = format-date(start, language) + " – " + format-date(end, language)
 
+#let remove-protocol(url) = {
+  if url.starts-with("https://") {
+    url.slice(8)
+  } else if url.starts-with("http://") {
+    url.slice(7)
+  } else {
+    url
+  }
+}
+
 #let join-list(list, separator: ", ") = (
   list.map(x => if type(x) == dictionary { x.at("name", default: x) } else { x }).join(separator)
 )
