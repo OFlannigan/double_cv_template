@@ -12,7 +12,7 @@
           columns: (1fr, 2fr),
           rows: (1fr,),
           rect(width: 100%, height: 100%, fill: rgb("#239dad50"), stroke: none),
-          rect(width: 100%, height: 100%, fill: rgb("#FF0000"), stroke: none),
+          rect(width: 100%, height: 100%, stroke: none),
         ),
       ),
     )

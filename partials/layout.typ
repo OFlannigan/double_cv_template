@@ -20,9 +20,10 @@
 }
 
 #let header(name, title) = [
-  #text(size: 18pt, weight: "bold")[#name] \
-  #text(size: 11pt, fill: theme.muted)[#title]
-  #v(1em)
+  #v(1.5em)
+  #text(size: 32pt, weight: "bold")[#name] \
+  #text(size: 24pt, fill: theme.muted)[#title]
+  #v(1.5em)
 ]
 
 #let sidebar-block(title, content) = [
