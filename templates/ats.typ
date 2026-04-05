@@ -14,7 +14,8 @@
       ]
 
       #block(breakable: false)[
-      #link("mailto:" + data.contact.email) | #link("tel:" + data.contact.phone) | #link(data.contact.linkedin.url)[#remove-protocol(data.contact.linkedin.url)] | #link(data.contact.github.url)[#remove-protocol(data.contact.github.url)]]
+        #build-contact-links(data.contact)
+      ]
     ]
     #block(breakable: false)[
       #main-section(label("experience", language))

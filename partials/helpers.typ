@@ -90,3 +90,60 @@
 }
 
 #let sort-by-date(list) = list.sorted(key: x => x.start_date).rev()
+
+#let build-contact-items(contact, icons) = {
+  let items = ()
+  if contact.at("email", default: none) != none {
+    items.push(icons.email)
+    items.push([#link("mailto:" + contact.email)])
+  }
+  if contact.at("phone", default: none) != none {
+    items.push(icons.phone)
+    items.push([#link("tel:" + contact.phone)])
+  }
+  if contact.at("website", default: none) != none {
+    items.push(icons.website)
+    items.push([#link(contact.website)[#remove-protocol(contact.website)]])
+  }
+  if contact.linkedin.at("url", default: none) != none {
+    items.push(icons.linkedin)
+    items.push([#link(contact.linkedin.url)[#contact.linkedin.display_text]])
+  }
+  if contact.github.at("url", default: none) != none {
+    items.push(icons.github)
+    items.push([#link(contact.github.url)[#contact.github.display_text]])
+  }
+  if contact.address.at("street", default: none) != none {
+    items.push(icons.address)
+    items.push([#contact.address.street])
+  }
+  if contact.address.at("postal_code", default: none) != none {
+    items.push([])
+    items.push([#contact.address.postal_code #contact.address.city])
+  }
+  if contact.address.at("country", default: none) != none {
+    items.push([])
+    items.push([#contact.address.country])
+  }
+  items
+}
+
+#let build-contact-links(contact) = {
+  let links = ()
+  if contact.at("email", default: none) != none {
+    links.push([#link("mailto:" + contact.email)])
+  }
+  if contact.at("phone", default: none) != none {
+    links.push([#link("tel:" + contact.phone)])
+  }
+  if contact.at("website", default: none) != none {
+    links.push([#link(contact.website)[#remove-protocol(contact.website)]])
+  }
+  if contact.linkedin.at("url", default: none) != none {
+    links.push([#link(contact.linkedin.url)[#remove-protocol(contact.linkedin.url)]])
+  }
+  if contact.github.at("url", default: none) != none {
+    links.push([#link(contact.github.url)[#remove-protocol(contact.github.url)]])
+  }
+  links.join([ | ])
+}

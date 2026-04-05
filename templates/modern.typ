@@ -29,13 +29,14 @@
             columns: (1fr, 8fr),
             inset: (y: 2pt),
             align: (left + horizon, left + horizon),
-            [#email-icon], [#link("mailto:" + data.contact.email)],
-            [#phone-icon], [#link("tel:" + data.contact.phone)],
-            [#linkedin-icon], [#link(data.contact.linkedin.url)[#data.contact.linkedin.display_text]],
-            [#github-icon], [#link(data.contact.github.url)[#data.contact.github.display_text]],
-            [#address-icon], [#data.contact.address.street],
-            [], [#data.contact.address.postal_code #data.contact.address.city],
-            [], [#data.contact.address.country],
+            ..build-contact-items(data.contact, (
+              email: [#email-icon],
+              phone: [#phone-icon],
+              website: [#website-icon],
+              linkedin: [#linkedin-icon],
+              github: [#github-icon],
+              address: [#address-icon],
+            ))
           )
         ]
       ])
