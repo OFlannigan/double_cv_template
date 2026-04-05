@@ -56,9 +56,9 @@
       ])
 
       #sidebar-block(label("languages", language), [
-        #for language in data.languages [
-          #text(weight: "bold")[#translate(language.name, language)]
-          #text[#translate(language.level, language)]
+        #for lang in data.languages [
+          #text(weight: "bold")[#translate(lang.name, language)]
+          #text[#translate(lang.level, language)]
           #v(0.1em)
         ]
       ])
