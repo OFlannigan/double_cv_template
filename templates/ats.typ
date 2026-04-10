@@ -39,6 +39,13 @@
       ]
     ]
 
+    #if data.keys().contains("volunteering") [
+      #main-section(label("volunteering", language))
+      #for item in sort-by-date(data.volunteering) [
+        #volunteering-item(item, language)
+      ]
+    ]
+
     #if data.keys().contains("skills") [
       #main-section(label("skills", language))
       #for category in data.skills.categories [
@@ -71,6 +78,14 @@
           #text[#translate(lang.level, language)]
           #v(0.1em)
         ]
+      ]
+      #v(0.5em)
+    ]
+
+    #if data.keys().contains("interests") [
+      #main-section(label("interests", language))
+      #block(breakable: false)[
+        #join-list(data.interests.map(i => translate(i, language)))
       ]
       #v(0.5em)
     ]

@@ -116,6 +116,21 @@ experience:
             - "Full-stack development"
             - "Database optimization"
 
+volunteering:
+  - organization: "NGO XYZ"
+    website: "https://ngo-xyz.de/"
+    location: "Hamburg"
+    role:
+      de: "IT-Berater"
+      en: "IT Consultant"
+    start_date: "2023-08"
+    end_date: null
+    description:
+      de:
+        - "Beratung bei der Digitalisierung von Prozessen"
+      en:
+        - "Consulting for the digitalization of processes"
+
 skills:
   categories:
     - name:
@@ -158,3 +173,9 @@ certifications:
   - name: "AWS Certified Developer"
     issuer: "Amazon"
     date: "2021-05"
+
+interests:
+  - de: "Lesen von Science-Fiction und Fantasy"
+    en: "Reading Science-Fiction and Fantasy"
+  - de: "Fußball im Verein"
+    en: "Football in the Club"

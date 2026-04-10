@@ -77,6 +77,14 @@
             ]
           ]
         ])]
+
+      #if data.keys().contains("interests") [
+        #sidebar-block(label("interests", language), [
+          #block(breakable: false)[
+            #join-list(data.interests.map(i => translate(i, language)))
+          ]
+        ])
+      ]
     ]
 
     #let main = [
@@ -102,6 +110,13 @@
         #main-section(label("education", language))
         #for education in sort-by-date(data.education) [
           #education-item(education, language)
+        ]
+      ]
+
+      #if data.keys().contains("volunteering") [
+        #main-section(label("volunteering", language))
+        #for item in sort-by-date(data.volunteering) [
+          #volunteering-item(item, language)
         ]
       ]
     ]

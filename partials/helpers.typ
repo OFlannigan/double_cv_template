@@ -21,6 +21,8 @@
     certification: "Zertifizierungen",
     final_grade: "Abschlussnote",
     current_grade: "Aktuelle Note",
+    volunteering: "Ehrenamtliches Engagement",
+    interests: "Interessen",
   ),
   en: (
     experience: "Work Experience",
@@ -32,6 +34,8 @@
     certification: "Certifications",
     final_grade: "Final Grade",
     current_grade: "Current Grade",
+    volunteering: "Volunteering",
+    interests: "Interests",
   ),
 )
 

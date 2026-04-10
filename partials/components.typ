@@ -16,7 +16,7 @@
       [#translate(position.position, language)],
       [#align(right)[#date-range(position.start_date, position.end_date, language)]],
     )
-
+    #v(-0.6em)
     #render-bullets(translate(position.description, language), language)
     #v(0.5em)
   ]
@@ -31,7 +31,7 @@
       [#translate(position.position, language)],
       [#align(right)[#date-range(position.start_date, position.end_date, language)]],
     )
-
+    #v(-0.6em)
     #render-bullets(translate(position.description, language), language)
     #v(0.5em)
   ]
@@ -68,6 +68,32 @@
       #render-bullets(translate(details, language), language)
     ]
 
+    #v(0.5em)
+  ]
+}
+
+#let volunteering-item(item, language) = {
+  block(breakable: false)[
+    #grid(
+      columns: (1fr, auto),
+      gutter: 0pt,
+      inset: (y: 3pt),
+      [#text(weight: "bold")[
+        #if item.at("website", default: none) != none [
+          #link(item.website)[#item.organization]
+        ] else [
+          #item.organization
+        ]
+      ]],
+      [#align(right)[#text(weight: "bold")[#item.location]]],
+
+      [#translate(item.role, language)], [#align(right)[#date-range(item.start_date, item.end_date, language)]],
+    )
+    #v(-0.8em)
+    #let description = item.at("description", default: none)
+    #if description != none [
+      #render-bullets(translate(description, language), language)
+    ]
     #v(0.5em)
   ]
 }
