@@ -81,25 +81,21 @@
     #let main = [
       #header(data.person.first_name + " " + data.person.last_name, translate(data.person.title, language))
 
-      #block(breakable: false)[
-        #main-section(label("experience", language))
-        #for company in data.experience [
-          #let sorted_positions = company.positions.sorted(key: p => p.start_date).rev()
-          #for (index, position) in sorted_positions.enumerate() [
-            #if index == 0 [
-              #company-position-first(position, company, language)
-            ] else [
-              #company-position-rest(position, language)
-            ]
+      #main-section(label("experience", language))
+      #for company in data.experience [
+        #let sorted_positions = company.positions.sorted(key: p => p.start_date).rev()
+        #for (index, position) in sorted_positions.enumerate() [
+          #if index == 0 [
+            #company-position-first(position, company, language)
+          ] else [
+            #company-position-rest(position, language)
           ]
         ]
       ]
 
-      #block(breakable: false)[
-        #main-section(label("education", language))
-        #for education in sort-by-date(data.education) [
-          #education-item(education, language)
-        ]
+      #main-section(label("education", language))
+      #for education in sort-by-date(data.education) [
+        #education-item(education, language)
       ]
     ]
 

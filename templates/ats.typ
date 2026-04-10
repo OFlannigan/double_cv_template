@@ -17,61 +17,52 @@
         #build-contact-links(data.contact)
       ]
     ]
-    #block(breakable: false)[
-      #main-section(label("experience", language))
-      #for company in data.experience [
-        #let sorted_positions = company.positions.sorted(key: p => p.start_date).rev()
-        #for (index, position) in sorted_positions.enumerate() [
-          #if index == 0 [
-            #company-position-first(position, company, language)
-          ] else [
-            #company-position-rest(position, language)
-          ]
+
+    #main-section(label("experience", language))
+    #for company in data.experience [
+      #let sorted_positions = company.positions.sorted(key: p => p.start_date).rev()
+      #for (index, position) in sorted_positions.enumerate() [
+        #if index == 0 [
+          #company-position-first(position, company, language)
+        ] else [
+          #company-position-rest(position, language)
         ]
       ]
     ]
 
-    #block(breakable: false)[
-      #main-section(label("education", language))
-      #for education in sort-by-date(data.education) [
-        #education-item(education, language)
-      ]
+    #main-section(label("education", language))
+    #for education in sort-by-date(data.education) [
+      #education-item(education, language)
     ]
 
-    #block(breakable: false)[
-      #main-section(label("skills", language))
-      #for category in data.skills.categories [
-        #block(breakable: false)[
-          #text(weight: "bold")[#translate(category.name, language)]
-          #join-list(category.items)
-          #v(0.1em)
-        ]
+    #main-section(label("skills", language))
+    #for category in data.skills.categories [
+      #block(breakable: false)[
+        #text(weight: "bold")[#translate(category.name, language)]
+        #join-list(category.items)
+        #v(0.1em)
       ]
-      #v(0.5em)
     ]
+    #v(0.5em)
 
-    #block(breakable: false)[
-      #main-section(label("certification", language))
-      #for certificate in data.certifications [
-        #block(breakable: false)[
-          #text(weight: "bold")[#translate(certificate.name, language)]\
-          #text[#translate(certificate.issuer, language) - #format-date(certificate.date, language)]
-          #v(0.1em)
-        ]
+    #main-section(label("certification", language))
+    #for certificate in data.certifications [
+      #block(breakable: false)[
+        #text(weight: "bold")[#translate(certificate.name, language)]\
+        #text[#translate(certificate.issuer, language) - #format-date(certificate.date, language)]
+        #v(0.1em)
       ]
-      #v(0.5em)
     ]
+    #v(0.5em)
 
-    #block(breakable: false)[
-      #main-section(label("languages", language))
-      #for lang in data.languages [
-        #block(breakable: false)[
-          #text(weight: "bold")[#translate(lang.name, language)]
-          #text[#translate(lang.level, language)]
-          #v(0.1em)
-        ]
+    #main-section(label("languages", language))
+    #for lang in data.languages [
+      #block(breakable: false)[
+        #text(weight: "bold")[#translate(lang.name, language)]
+        #text[#translate(lang.level, language)]
+        #v(0.1em)
       ]
-      #v(0.5em)
     ]
+    #v(0.5em)
   ])
 }
